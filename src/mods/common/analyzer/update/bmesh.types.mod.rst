@@ -13,6 +13,11 @@
       :type: :class:`bmesh.types.BMLayerItem`\ [GenericType1]
       :mod-option attribute: skip-refine
 
+   .. method:: get(key, default=None)
+
+      :type default: GenericType2
+      :mod-option arg default: skip-refine
+
    .. method:: items()
 
       :rtype: list[str, :class:`bmesh.types.BMLayerItem`\ [GenericType1]]
@@ -26,7 +31,7 @@
    .. method:: remove(layer)
 
       :type layer: :class:`bmesh.types.BMLayerItem`\ [GenericType1]
-      :mod-option type layer: skip-refine
+      :mod-option arg layer: skip-refine
 
    .. method:: values()
 
