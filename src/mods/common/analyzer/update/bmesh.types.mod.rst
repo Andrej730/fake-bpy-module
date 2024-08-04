@@ -13,6 +13,26 @@
       :type: :class:`bmesh.types.BMLayerItem`\ [GenericType1]
       :mod-option attribute: skip-refine
 
+   .. method:: items()
+
+      :rtype: list[str, :class:`bmesh.types.BMLayerItem`\ [GenericType1]]
+      :mod-option rtype: skip-refine
+
+   .. method:: new()
+
+      :rtype: :class:`bmesh.types.BMLayerItem`\ [GenericType1]
+      :mod-option rtype: skip-refine
+
+   .. method:: remove(layer)
+
+      :type layer: :class:`bmesh.types.BMLayerItem`\ [GenericType1]
+      :mod-option type layer: skip-refine
+
+   .. method:: values()
+
+      :rtype: list[:class:`bmesh.types.BMLayerItem`\ [GenericType1]]
+      :mod-option rtype: skip-refine
+
    .. method:: verify()
 
       :rtype: :class:`bmesh.types.BMLayerItem`\ [GenericType1]

@@ -135,7 +135,7 @@
 
    .. method:: get()
 
-      :rtype: :class:`BMLayerItem` | GenericType2
+      :rtype: :class:`BMLayerItem`\ [GenericType1] | GenericType2
       :mod-option rtype: skip-refine
 
 .. class:: BMVert
