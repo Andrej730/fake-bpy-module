@@ -8,15 +8,21 @@
 
       :mod-option base-class: skip-refine
 
-   .. method:: get(key, default=None)
+   .. attribute:: active
 
-      :type default: GenericType1
-      :mod-option arg default: skip-refine
+      :type: :class:`bmesh.types.BMLayerItem`\ [GenericType1]
+      :mod-option attribute: skip-refine
 
    .. method:: verify()
 
-      :rtype: GenericType1
+      :rtype: :class:`bmesh.types.BMLayerItem`\ [GenericType1]
       :mod-option rtype: skip-refine
+
+.. class:: BMLayerItem
+
+   .. base-class:: typing.Generic[GenericType1]
+
+      :mod-option base-class: skip-refine
 
 .. class:: BMVert
 
