@@ -648,6 +648,9 @@ class DataTypeRefiner(TransformerBase):
                     "never none" not in option_results):
                 if _REGEX_DATA_TYPE_STARTS_WITH_COLLECTION.match(r.to_string()):
                     option_results.append("never none")
+            # If data type is bpy.types.Context, it will be never None.
+            if r.to_string() == "bpy.types.Context":
+                option_results.append("never none")
             r.attributes["option"] = ",".join(option_results)
 
         output_log(
