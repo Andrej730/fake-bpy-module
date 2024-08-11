@@ -12,11 +12,16 @@
 
    .. method:: values()
 
-      :rtype: list[GenericType1]
+      :rtype: list[GenericType1 | None]
       :mod-option rtype: skip-refine
+
+   .. method:: find(key)
+
+      :type key: str (never None)
 
    .. method:: get(key, default=None)
 
+      :type key: str (never None)
       :type default: GenericType2
       :mod-option arg default: skip-refine
 
