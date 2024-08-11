@@ -154,4 +154,4 @@
    .. method:: pop(*, index=-1)
 
       :type index: int (never None) 
-      :option arg index: kwonlyarg
+      :mod-option arg index: update-argument-type
