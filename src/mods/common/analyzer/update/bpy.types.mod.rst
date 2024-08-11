@@ -154,3 +154,4 @@
    .. method:: pop(*, index=-1)
 
       :type index: int (never None) 
+      :option arg index: kwonlyarg
