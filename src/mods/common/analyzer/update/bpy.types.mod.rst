@@ -148,3 +148,9 @@
    .. attribute:: node_tree
 
       :type: :class:`bpy.types.TextureNodeTree`
+
+.. class:: IDMaterials
+
+   .. method:: pop(*, index=-1)
+
+      :type index: int (never None) 
