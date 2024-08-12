@@ -72,7 +72,8 @@ class ModApplier(TransformerBase):
                 if arg_name == mod_arg_name:
                     mod_options = []
                     if "mod-option" in mod_arg_node.attributes:
-                        mod_options = mod_arg_node["mod-option"].split(",")
+                        mod_options = mod_arg_node.attributes["mod-option"].split(",")
+                        print(f"XXXX {mod_options}")
                     if "update-argument-type" in mod_options:
                         arg_node.attributes["argument_type"] = mod_arg_node.attributes["argument_type"]
                     print(f"@@@@ {mod_arg_node.attributes} - {arg_name}")
