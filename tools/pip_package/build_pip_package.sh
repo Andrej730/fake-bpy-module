@@ -62,7 +62,6 @@ SCRIPT_DIR=$(cd $(dirname "$0"); pwd)
 CURRENT_DIR=$(pwd)
 PYTHON_BIN=${PYTHON_BIN:-python}
 
-# check arguments
 if [ $# -ne 4 ] && [ $# -ne 5 ]; then
     echo "Usage: bash build_pip_package.sh <target> <target-version> <source-dir> <blender-dir> [<mod-version>]"
     exit 1
@@ -151,15 +150,15 @@ fake_module_dir="out"
 ver=v${target_version}
 if [ "${target}" = "blender" ]; then
     if [ "${mod_version}" = "not-specified" ]; then
-        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${CURRENT_DIR}/${source_dir}" "${CURRENT_DIR}/${blender_dir}" "${target}" "${BLENDER_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}"
+        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${source_dir}" "${blender_dir}" "${target}" "${BLENDER_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}"
     else
-        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${CURRENT_DIR}/${source_dir}" "${CURRENT_DIR}/${blender_dir}" "${target}" "${BLENDER_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}" "${mod_version}"
+        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${source_dir}" "${blender_dir}" "${target}" "${BLENDER_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}" "${mod_version}"
     fi
 elif [ "${target}" = "upbge" ]; then
     if [ "${mod_version}" = "not-specified" ]; then
-        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${CURRENT_DIR}/${source_dir}" "${CURRENT_DIR}/${blender_dir}" "${target}" "${UPBGE_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}"
+        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${source_dir}" "${blender_dir}" "${target}" "${UPBGE_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}"
     else
-        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${CURRENT_DIR}/${source_dir}" "${CURRENT_DIR}/${blender_dir}" "${target}" "${UPBGE_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}" "${mod_version}"
+        bash "${SCRIPT_DIR}/../../src/gen_module.sh" "${source_dir}" "${blender_dir}" "${target}" "${UPBGE_TAG_NAME[${ver}]}" "${target_version}" "${fake_module_dir}" "${mod_version}"
     fi
 else
     echo "${target} is not supported."

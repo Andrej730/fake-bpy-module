@@ -90,9 +90,9 @@ mkdir -p "${tmp_dir}"
 
 echo "Changing to the target git ref ..."
 cd "${source_dir}"
-remote_git_ref="$(get_remote_git_ref "${git_ref}")"
-git fetch --depth 1 origin "${remote_git_ref}"
-git checkout -f "${remote_git_ref}"
+# remote_git_ref="$(get_remote_git_ref "${git_ref}")"
+# git fetch --depth 1 origin "${remote_git_ref}"
+# git checkout -f "${remote_git_ref}"
 
 function apply_workaround() {
     local ref=${git_ref}
@@ -266,7 +266,7 @@ fi
 
 echo "Cleaning up ..."
 cd "${current_dir}"
-if [ "${env_temporary_dir}" == "not-specified" ]; then
-    rm -rf "${tmp_dir}"
-    rm -rf "${generated_mod_dir}"
-fi
+# if [ "${env_temporary_dir}" == "not-specified" ]; then
+#     rm -rf "${tmp_dir}"
+#     rm -rf "${generated_mod_dir}"
+# fi

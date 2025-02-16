@@ -4,6 +4,7 @@
 
 # ignore python
 __pycache__/
+venv
 .venv
 
 # build files
