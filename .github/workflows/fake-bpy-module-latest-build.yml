@@ -17,7 +17,6 @@ jobs:
   set_versions:
     name: Set build versions
     runs-on: ubuntu-latest
-    if: github.repository == 'nutti/fake-bpy-module'
     outputs:
       module_version: ${{ steps.set_module_version.outputs.module_version }}
       file_version: ${{ steps.set_file_version.outputs.file_version }}
@@ -44,7 +43,6 @@ jobs:
   build_modules:
     name: Build modules
     runs-on: ubuntu-latest
-    if: github.repository == 'nutti/fake-bpy-module'
     needs: [set_versions]
     steps:
       - name: Checkout repo
@@ -167,9 +165,7 @@ jobs:
   pypi_release_test:
     name: PyPI Release test
     needs: [build_modules]
-    if: |
-      github.repository == 'nutti/fake-bpy-module' &&
-      github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Fetch artifacts
@@ -194,9 +190,7 @@ jobs:
   pypi_release:
     name: PyPI Release fake-bpy-module
     needs: [pypi_release_test]
-    if: |
-      github.repository == 'nutti/fake-bpy-module' &&
-      github.event_name == 'schedule'
+    if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Artifacts
