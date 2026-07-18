@@ -691,6 +691,27 @@ class BaseClassDirective(rst.Directive):
         return [base_class_list_node]
 
 
+class DetailsDirective(rst.Directive):
+    required_arguments = 0
+    optional_arguments = 1
+    final_argument_whitespace = True
+    has_content = True
+
+    def run(self) -> list[FunctionNode]:
+        # `.. details::` used in Blender docs to denote a section
+        # with dunder methods.
+        # See "Special Methods" in
+        # https://docs.blender.org/api/5.2/bmesh.types.html#bmesh.types.BMDeformVert
+        # Skipped for now: it's currently undecided how to correctly merge
+        # conflicts between fake-bpy mod.rst overrides and upstream dunder
+        # methods, since the two use different approaches:
+        #   fake-bpy: `bpy_prop_collection.__getitem__`->`_GenericType1`
+        #   upstream: `bpy_prop_collection.__getitem__`->`bpy_struct`, then
+        #             reimplements e.g. `BlendDataObjects.__getitem__`->`Object`
+        #             in stubs (not present in docs)
+        return []
+
+
 def register_directives() -> None:
     rst.directives.register_directive("module", ModuleDirective)
     rst.directives.register_directive("currentmodule", ModuleDirective)
@@ -715,5 +736,6 @@ def register_directives() -> None:
     rst.directives.register_directive("deprecated", DocumentDirective)
 
     rst.directives.register_directive("include", NopDirective)
+    rst.directives.register_directive("details", DetailsDirective)
 
     rst.directives.register_directive("mod-type", ModTypeDirective)
