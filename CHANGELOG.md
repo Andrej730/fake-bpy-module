@@ -2,7 +2,25 @@
 
 # Change Log
 
-## [Unreleased](https://github.com/nutti/fake-bpy-module/compare/20260128...main)
+## [Unreleased](https://github.com/nutti/fake-bpy-module/compare/20260730...main)
+
+<!-- markdownlint-disable-next-line MD013 -->
+## [20260730](https://github.com/nutti/fake-bpy-module/compare/20260128...20260730) - 2026.7.30
+
+### Updated Features
+
+* Support fake-bpy-module-5.1
+* Support fake-bpy-module-5.2
+
+### Other Updates
+
+* Rename generated modules to *-stubs
+* Fix bugs
+
+### Contributors
+
+* [**@Andrej730**](https://github.com/Andrej730)
+* [**@taway1450**](https://github.com/taway1450)
 
 <!-- markdownlint-disable-next-line MD013 -->
 ## [20260128](https://github.com/nutti/fake-bpy-module/compare/20250130...20260128) - 2026.1.28
