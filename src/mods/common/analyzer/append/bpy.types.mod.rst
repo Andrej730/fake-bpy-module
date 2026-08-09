@@ -199,6 +199,8 @@
 
 .. class:: bpy_struct
 
+   :generic-types: _GenericType1
+
    .. attribute:: bl_rna
 
       :type: :class:`bpy.types.BlenderRNA`, (never none)
@@ -207,14 +209,14 @@
 
       :type key: int | str
       :mod-option arg key: skip-refine
-      :rtype: typing.Any
+      :rtype: _GenericType1
       :mod-option rtype: skip-refine
 
    .. method:: __setitem__(key, value)
 
       :type key: int | str
       :mod-option arg key: skip-refine
-      :type value: typing.Any
+      :type value: _GenericType1
       :mod-option arg value: skip-refine
 
    .. method:: __delitem__(key)
@@ -251,3 +253,17 @@
       :rtype: collections.abc.Iterator[:class:`Material` | None]
       :mod-option rtype: skip-refine
       :option function: overload
+
+.. class:: ContextTempOverride
+
+   .. method:: __enter__()
+
+      :rtype: typing_extensions.Self
+      :mod-option rtype: skip-refine
+
+   .. method:: __exit__(exc_type, exc_val, exc_tb)
+
+      :type exc_type: type[BaseException] | None
+      :mod-option arg exc_type: skip-refine
+      :type exc_val: BaseException | None
+      :mod-option arg exc_val: skip-refine
